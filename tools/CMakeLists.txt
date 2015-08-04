@@ -1,6 +1,9 @@
 # Options
-SET(BUILD_TOOLS_SCREEN TRUE CACHE BOOL "Build Trillek VCOMPUTER tools with virtual screen")
-SET(BUILD_TOOLS_AUDIO  TRUE CACHE BOOL "Build Trillek VCOMPUTER tools with audio")
+
+CMAKE_DEPENDENT_OPTION(BUILD_TOOLS_SCREEN "Build Trillek VCOMPUTER tools with virtual screen" TRUE
+  "BUILD_TOOLS_VCOMPUTER")
+CMAKE_DEPENDENT_OPTION(BUILD_TOOLS_AUDIO  "Build Trillek VCOMPUTER tools with audio" TRUE
+  "BUILD_TOOLS_VCOMPUTER")
 
 # Give these some dummy values and if the platform is LINUX or OSX they will be set accordingly.
 SET(X11_LIBRARIES "")
